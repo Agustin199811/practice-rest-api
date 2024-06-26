@@ -16,9 +16,9 @@ git clone https://github.com/Agustin199811/practice-rest-api.git
 4. Configure the MySQL database in your local environment. You can find instructions for configuring the database in the `application.properties` file.
 ## Changes in your project
 
-`spring.datasource.url=jdbc:mysql://localhost:3306/rest_api_book`
-`spring.datasource.username=root`
-`spring.datasource.password=root`
+- `spring.datasource.url=jdbc:mysql://localhost:3306/rest_api_book`
+- `spring.datasource.username=root`
+- `spring.datasource.password=root`
 
 5. Run the Spring Boot application. The application will be available at `http://localhost:8081`.
 
