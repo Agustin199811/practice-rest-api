@@ -9,29 +9,34 @@ This project is currently in development and is being worked on for version 1.0.
 ## Installation and Setup
 
 1. Clone this repository to your local machine using the following command:
-git clone https://github.com/your-user/spring-boot-book-rest-api.git
+git clone https://github.com/Agustin199811/practice-rest-api.git
 
 3. Import the project into your preferred IDE (e.g., IntelliJ IDEA or Eclipse) as a Maven project.
 
 4. Configure the MySQL database in your local environment. You can find instructions for configuring the database in the `application.properties` file.
+## Changes in your project
 
-5. Run the Spring Boot application. The application will be available at `http://localhost:8080`.
+`spring.datasource.url=jdbc:mysql://localhost:3306/rest_api_book`
+`spring.datasource.username=root`
+`spring.datasource.password=root`
+
+5. Run the Spring Boot application. The application will be available at `http://localhost:8081`.
 
 ## Usage
 
 The book REST API exposes the following endpoints:
 
 - `GET /api/books`: Get all books.
-- `GET /api/book/{id}`: Get a book by its ID.
-- `POST /api/create`: Create a new book.
-- `PUT /api/update/{id}`: Update existing book information.
-- `DELETE /api/delete/{id}`: Delete a book by its ID.
+- `GET /api/books/{id}`: Get a book by its ID.
+- `POST /api/books`: Create a new book.
+- `PUT /api/books/{id}`: Update existing book information.
+- `DELETE /api/books/{id}`: Delete a book by its ID.
 
 You can use tools such as Postman or cURL to send HTTP requests to these endpoints.
 
 ## API Documentation
 
-API documentation is available in Swagger. You can access it at `http://localhost:8080/swagger-ui.html`.
+API documentation is available in Swagger. You can access it at `http://localhost:8081/swagger-ui.html`.
 
 ## Contribution
 

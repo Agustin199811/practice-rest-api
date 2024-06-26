@@ -63,6 +63,7 @@ public class BookController {
         if (!bookRepository.existsById(id)) {
             return ResponseEntity.notFound().build();
         }
+ 
         bookRepository.deleteById(id);
         return ResponseEntity.noContent().build();
     }
