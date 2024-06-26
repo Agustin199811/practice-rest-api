@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-@CrossOrigin(origins = {"https://react-book-frontend-production.up.railway.app/","http://localhost:3000/"})
+
 @RestController
 @RequestMapping("/api")
 @Tag(name = "Api Rest for books use Swagger 3 - Books")
@@ -20,10 +20,7 @@ public class BookController {
     @Autowired
     private BookRepository bookRepository;
 
-    @GetMapping("/findByPriceRange")
-    public ResponseEntity<List<Book>> findByPriceRange(){
-        return ResponseEntity.ok(bookRepository.findByPriceBetween(20.0, 60.0));
-    }
+  
 
     @Operation(summary = "This method use for list books")
     @GetMapping("/books")
@@ -32,7 +29,7 @@ public class BookController {
     }
 
     @Operation(summary = "This method use for get book by id")
-    @GetMapping("/book/{id}")
+    @GetMapping("/books/{id}")
     public ResponseEntity<Book> getbookById(@PathVariable Long id) {
         Optional<Book> optionalBook = bookRepository.findById(id);
         if (optionalBook.isPresent()) {
@@ -43,14 +40,14 @@ public class BookController {
     }
 
     @Operation(summary = "This method use for create a book")
-    @PostMapping("/create")
+    @PostMapping("/books")
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
         Book newBook = bookRepository.save(book);
         return ResponseEntity.status(HttpStatus.CREATED).body(newBook);
     }
 
     @Operation(summary = "This method use for update a book")
-    @PutMapping("/update/{id}")
+    @PutMapping("/books/{id}")
     public ResponseEntity<Book> updateBook(@RequestBody Book book, @PathVariable Long id) {
         if (!bookRepository.existsById(id)) {
             return ResponseEntity.notFound().build();
@@ -61,7 +58,7 @@ public class BookController {
     }
 
     @Operation(summary = "This method use for delete a book by id")
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/books/{id}")
     public ResponseEntity<?> deleteById(@PathVariable Long id) {
         if (!bookRepository.existsById(id)) {
             return ResponseEntity.notFound().build();
