@@ -14,7 +14,7 @@ git clone https://github.com/Agustin199811/practice-rest-api.git
 3. Import the project into your preferred IDE (e.g., IntelliJ IDEA or Eclipse) as a Maven project.
 
 4. Configure the MySQL database in your local environment. You can find instructions for configuring the database in the `application.properties` file.
-## Changes in your project
+# Changes in your project in the databsase
 
 - `spring.datasource.url=jdbc:mysql://localhost:3306/rest_api_book`
 - `spring.datasource.username=root`
